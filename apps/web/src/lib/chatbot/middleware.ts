@@ -1,5 +1,5 @@
 import "server-only";
-import {APICallError, generateText, LanguageModelMiddleware} from "ai";
+import {APICallError, generateText, LanguageModelMiddleware, Output} from "ai";
 
 import type {
     LanguageModelV3Message,
@@ -9,6 +9,7 @@ import type {
 import {getModerationModel} from "@/lib/chatbot/models";
 import {moderationSystemPrompt} from "@/lib/chatbot/system-prompt";
 import crypto from "node:crypto";
+import z from "zod";
 
 export const llmModerationMiddleware: LanguageModelMiddleware = {
     specificationVersion: "v3",
@@ -96,7 +97,7 @@ export async function moderateMessage(message: string, prompt: LanguageModelV3Pr
     const tagSuffix = crypto.randomBytes(4).toString("hex").slice(0, 8);
 
     const contentForModeration = formatContentForModeration(prompt, message, tagSuffix);
-    const maxAttempts = 4;
+    const maxAttempts = 6;
     for (let attempt = 0; attempt < maxAttempts; attempt++) {
         try {
             const response = await generateText({
@@ -105,25 +106,21 @@ export async function moderateMessage(message: string, prompt: LanguageModelV3Pr
                 messages: [{
                     role: "user",
                     content: contentForModeration
-                }]
+                }],
+                output: Output.object({
+                    schema: z.object({
+                        rationale: z.string(),
+                        safe: z.literal(1).or(z.literal(0))
+                    })
+                })
             })
 
-            if (response.text == "") {
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                continue //retry
-            }
-            const responseFormatted = response.text.trim().toUpperCase();
-            if (responseFormatted !== "SAFE")
-                console.log("Moderation response:" + response.text);
-            if (responseFormatted === "SAFE"){
+            if (response.output.safe === 1) {
                 return true;
-            }
-            else if (responseFormatted === "UNSAFE") {
-                return false
             } else {
-                console.error(`Unexpected moderation response: "${response.text}".`);
+                console.warn("Content classified as unsafe by moderation model. Rationale:", response.output.rationale);
+                return false;
             }
-            // else retry
         } catch (error) {
             console.error("Error during moderation:", error);
             if (APICallError.isInstance(error) && error.statusCode === 429 && attempt === maxAttempts - 1) {
