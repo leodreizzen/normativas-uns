@@ -120,6 +120,8 @@ export async function moderateMessage(message: string, prompt: LanguageModelV3Pr
             }
             else if (responseFormatted === "UNSAFE") {
                 return false
+            } else {
+                console.error(`Unexpected moderation response: "${response.text}".`);
             }
             // else retry
         } catch (error) {
@@ -136,7 +138,7 @@ export async function moderateMessage(message: string, prompt: LanguageModelV3Pr
 
     console.error("Moderation failed after multiple attempts, treating content as safe.");
 
-    return false;
+    return true;
 }
 
 function formatContentForModeration(prompt: LanguageModelV3Prompt, message: string, tagSuffix: string): string {
