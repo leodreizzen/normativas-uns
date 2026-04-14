@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@google/genai": "^1.50.0",
-    "@langchain/community": "^0.3.59",
+    "@langchain/community": "^1.1.18",
     "@langchain/google-genai": "^0.2.18",
     "@repo/db": "workspace:*",
     "bottleneck": "^2.19.5",
