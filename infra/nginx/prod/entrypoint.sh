@@ -43,7 +43,7 @@ fi
 
             certbot certonly --webroot -w /var/www/certbot \
                 $STAGING_ARG \
-                -d "$DOMAIN" -d "www.$DOMAIN" --email "$CERTBOT_EMAIL" \
+                -d "$DOMAIN" --cert-name normativas.leodreizzen.com --email "$CERTBOT_EMAIL" \
                 --agree-tos --no-eff-email --non-interactive
 
             if [ $? -eq 0 ]; then
@@ -55,7 +55,7 @@ fi
         fi
 
         # Renewal loop
-        while :; certbot renew --deploy-hook "nginx -s reload"; do sleep 12h; done
+        while :; certbot renew --cert-name normativas.leodreizzen.com --deploy-hook "nginx -s reload"; do sleep 12h; done
     else
         echo "Timed out waiting for Nginx to start."
         kill 1
