@@ -32,7 +32,7 @@
   "dependencies": {
     "@repo/db": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "ioredis": "^5.8.2"
+    "ioredis": "^5.10.1"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

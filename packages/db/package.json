@@ -14,16 +14,16 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "prisma": "^7.0.0",
+    "prisma": "^7.7.0",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@prisma/adapter-pg": "^7.1.0",
-    "@prisma/client": "^7.2.0",
-    "@types/node": "^22.15.3",
-    "dotenv": "^17.2.3",
+    "@prisma/adapter-pg": "^7.7.0",
+    "@prisma/client": "^7.7.0",
+    "@types/node": "^22.19.17",
+    "dotenv": "^17.4.2",
     "postinstall": "^0.11.2",
-    "zod": "^4.2.1"
+    "zod": "^4.3.6"
   },
   "exports": {
     "./content-blocks": {
