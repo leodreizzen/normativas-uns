@@ -49,7 +49,7 @@
     "ai": "^6.0.73",
     "axios": "^1.15.0",
     "bcrypt": "^6.0.0",
-    "better-auth": "^1.4.5",
+    "better-auth": "^1.4.9",
     "bullmq": "^5.66.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
