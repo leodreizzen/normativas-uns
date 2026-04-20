@@ -151,7 +151,7 @@ export type ChangeGroupByOutputType = {
   _max: ChangeMaxAggregateOutputType | null
 }
 
-type GetChangeGroupByPayload<T extends ChangeGroupByArgs> = Prisma.PrismaPromise<
+export type GetChangeGroupByPayload<T extends ChangeGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ChangeGroupByOutputType, T['by']> &
       {
@@ -2347,6 +2347,11 @@ export type ChangeFindManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
    * Skip the first `n` Changes.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Changes.
+   */
   distinct?: Prisma.ChangeScalarFieldEnum | Prisma.ChangeScalarFieldEnum[]
 }
 

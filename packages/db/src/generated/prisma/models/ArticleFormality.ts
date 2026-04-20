@@ -130,7 +130,7 @@ export type ArticleFormalityGroupByOutputType = {
   _max: ArticleFormalityMaxAggregateOutputType | null
 }
 
-type GetArticleFormalityGroupByPayload<T extends ArticleFormalityGroupByArgs> = Prisma.PrismaPromise<
+export type GetArticleFormalityGroupByPayload<T extends ArticleFormalityGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ArticleFormalityGroupByOutputType, T['by']> &
       {
@@ -956,6 +956,11 @@ export type ArticleFormalityFindManyArgs<ExtArgs extends runtime.Types.Extension
    * Skip the first `n` ArticleFormalities.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ArticleFormalities.
+   */
   distinct?: Prisma.ArticleFormalityScalarFieldEnum | Prisma.ArticleFormalityScalarFieldEnum[]
 }
 

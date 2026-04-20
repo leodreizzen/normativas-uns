@@ -185,7 +185,7 @@ export type AnnexChapterGroupByOutputType = {
   _max: AnnexChapterMaxAggregateOutputType | null
 }
 
-type GetAnnexChapterGroupByPayload<T extends AnnexChapterGroupByArgs> = Prisma.PrismaPromise<
+export type GetAnnexChapterGroupByPayload<T extends AnnexChapterGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<AnnexChapterGroupByOutputType, T['by']> &
       {
@@ -1347,6 +1347,11 @@ export type AnnexChapterFindManyArgs<ExtArgs extends runtime.Types.Extensions.In
    * Skip the first `n` AnnexChapters.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of AnnexChapters.
+   */
   distinct?: Prisma.AnnexChapterScalarFieldEnum | Prisma.AnnexChapterScalarFieldEnum[]
 }
 

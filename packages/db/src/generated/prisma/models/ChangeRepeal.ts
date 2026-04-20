@@ -137,7 +137,7 @@ export type ChangeRepealGroupByOutputType = {
   _max: ChangeRepealMaxAggregateOutputType | null
 }
 
-type GetChangeRepealGroupByPayload<T extends ChangeRepealGroupByArgs> = Prisma.PrismaPromise<
+export type GetChangeRepealGroupByPayload<T extends ChangeRepealGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ChangeRepealGroupByOutputType, T['by']> &
       {
@@ -1058,6 +1058,11 @@ export type ChangeRepealFindManyArgs<ExtArgs extends runtime.Types.Extensions.In
    * Skip the first `n` ChangeRepeals.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ChangeRepeals.
+   */
   distinct?: Prisma.ChangeRepealScalarFieldEnum | Prisma.ChangeRepealScalarFieldEnum[]
 }
 

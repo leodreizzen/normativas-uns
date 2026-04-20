@@ -178,7 +178,7 @@ export type ConsiderationGroupByOutputType = {
   _max: ConsiderationMaxAggregateOutputType | null
 }
 
-type GetConsiderationGroupByPayload<T extends ConsiderationGroupByArgs> = Prisma.PrismaPromise<
+export type GetConsiderationGroupByPayload<T extends ConsiderationGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ConsiderationGroupByOutputType, T['by']> &
       {
@@ -1216,6 +1216,11 @@ export type ConsiderationFindManyArgs<ExtArgs extends runtime.Types.Extensions.I
    * Skip the first `n` Considerations.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Considerations.
+   */
   distinct?: Prisma.ConsiderationScalarFieldEnum | Prisma.ConsiderationScalarFieldEnum[]
 }
 

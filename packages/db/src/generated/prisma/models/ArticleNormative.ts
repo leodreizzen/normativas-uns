@@ -130,7 +130,7 @@ export type ArticleNormativeGroupByOutputType = {
   _max: ArticleNormativeMaxAggregateOutputType | null
 }
 
-type GetArticleNormativeGroupByPayload<T extends ArticleNormativeGroupByArgs> = Prisma.PrismaPromise<
+export type GetArticleNormativeGroupByPayload<T extends ArticleNormativeGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ArticleNormativeGroupByOutputType, T['by']> &
       {
@@ -956,6 +956,11 @@ export type ArticleNormativeFindManyArgs<ExtArgs extends runtime.Types.Extension
    * Skip the first `n` ArticleNormatives.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ArticleNormatives.
+   */
   distinct?: Prisma.ArticleNormativeScalarFieldEnum | Prisma.ArticleNormativeScalarFieldEnum[]
 }
 

@@ -200,7 +200,7 @@ export type V_MissingResolutionGroupByOutputType = {
   _max: V_MissingResolutionMaxAggregateOutputType | null
 }
 
-type GetV_MissingResolutionGroupByPayload<T extends v_MissingResolutionGroupByArgs> = Prisma.PrismaPromise<
+export type GetV_MissingResolutionGroupByPayload<T extends v_MissingResolutionGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<V_MissingResolutionGroupByOutputType, T['by']> &
       {
@@ -789,6 +789,11 @@ export type v_MissingResolutionFindManyArgs<ExtArgs extends runtime.Types.Extens
    * Skip the first `n` v_MissingResolutions.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of v_MissingResolutions.
+   */
   distinct?: Prisma.V_MissingResolutionScalarFieldEnum | Prisma.V_MissingResolutionScalarFieldEnum[]
 }
 

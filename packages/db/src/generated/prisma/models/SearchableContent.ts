@@ -293,7 +293,7 @@ export type SearchableContentGroupByOutputType = {
   _max: SearchableContentMaxAggregateOutputType | null
 }
 
-type GetSearchableContentGroupByPayload<T extends SearchableContentGroupByArgs> = Prisma.PrismaPromise<
+export type GetSearchableContentGroupByPayload<T extends SearchableContentGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<SearchableContentGroupByOutputType, T['by']> &
       {
@@ -1368,6 +1368,11 @@ export type SearchableContentFindManyArgs<ExtArgs extends runtime.Types.Extensio
    * Skip the first `n` SearchableContents.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of SearchableContents.
+   */
   distinct?: Prisma.SearchableContentScalarFieldEnum | Prisma.SearchableContentScalarFieldEnum[]
 }
 

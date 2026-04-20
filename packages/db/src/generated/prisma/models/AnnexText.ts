@@ -130,7 +130,7 @@ export type AnnexTextGroupByOutputType = {
   _max: AnnexTextMaxAggregateOutputType | null
 }
 
-type GetAnnexTextGroupByPayload<T extends AnnexTextGroupByArgs> = Prisma.PrismaPromise<
+export type GetAnnexTextGroupByPayload<T extends AnnexTextGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<AnnexTextGroupByOutputType, T['by']> &
       {
@@ -1046,6 +1046,11 @@ export type AnnexTextFindManyArgs<ExtArgs extends runtime.Types.Extensions.Inter
    * Skip the first `n` AnnexTexts.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of AnnexTexts.
+   */
   distinct?: Prisma.AnnexTextScalarFieldEnum | Prisma.AnnexTextScalarFieldEnum[]
 }
 

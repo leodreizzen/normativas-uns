@@ -151,7 +151,7 @@ export type ChangeReplaceAnnexGroupByOutputType = {
   _max: ChangeReplaceAnnexMaxAggregateOutputType | null
 }
 
-type GetChangeReplaceAnnexGroupByPayload<T extends ChangeReplaceAnnexGroupByArgs> = Prisma.PrismaPromise<
+export type GetChangeReplaceAnnexGroupByPayload<T extends ChangeReplaceAnnexGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ChangeReplaceAnnexGroupByOutputType, T['by']> &
       {
@@ -1298,6 +1298,11 @@ export type ChangeReplaceAnnexFindManyArgs<ExtArgs extends runtime.Types.Extensi
    * Skip the first `n` ChangeReplaceAnnexes.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ChangeReplaceAnnexes.
+   */
   distinct?: Prisma.ChangeReplaceAnnexScalarFieldEnum | Prisma.ChangeReplaceAnnexScalarFieldEnum[]
 }
 

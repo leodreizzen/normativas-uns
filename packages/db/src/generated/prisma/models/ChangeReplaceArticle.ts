@@ -137,7 +137,7 @@ export type ChangeReplaceArticleGroupByOutputType = {
   _max: ChangeReplaceArticleMaxAggregateOutputType | null
 }
 
-type GetChangeReplaceArticleGroupByPayload<T extends ChangeReplaceArticleGroupByArgs> = Prisma.PrismaPromise<
+export type GetChangeReplaceArticleGroupByPayload<T extends ChangeReplaceArticleGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ChangeReplaceArticleGroupByOutputType, T['by']> &
       {
@@ -1129,6 +1129,11 @@ export type ChangeReplaceArticleFindManyArgs<ExtArgs extends runtime.Types.Exten
    * Skip the first `n` ChangeReplaceArticles.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ChangeReplaceArticles.
+   */
   distinct?: Prisma.ChangeReplaceArticleScalarFieldEnum | Prisma.ChangeReplaceArticleScalarFieldEnum[]
 }
 

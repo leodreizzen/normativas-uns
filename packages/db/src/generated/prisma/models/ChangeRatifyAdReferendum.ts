@@ -137,7 +137,7 @@ export type ChangeRatifyAdReferendumGroupByOutputType = {
   _max: ChangeRatifyAdReferendumMaxAggregateOutputType | null
 }
 
-type GetChangeRatifyAdReferendumGroupByPayload<T extends ChangeRatifyAdReferendumGroupByArgs> = Prisma.PrismaPromise<
+export type GetChangeRatifyAdReferendumGroupByPayload<T extends ChangeRatifyAdReferendumGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ChangeRatifyAdReferendumGroupByOutputType, T['by']> &
       {
@@ -1058,6 +1058,11 @@ export type ChangeRatifyAdReferendumFindManyArgs<ExtArgs extends runtime.Types.E
    * Skip the first `n` ChangeRatifyAdReferendums.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ChangeRatifyAdReferendums.
+   */
   distinct?: Prisma.ChangeRatifyAdReferendumScalarFieldEnum | Prisma.ChangeRatifyAdReferendumScalarFieldEnum[]
 }
 

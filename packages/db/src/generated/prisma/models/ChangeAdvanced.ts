@@ -165,7 +165,7 @@ export type ChangeAdvancedGroupByOutputType = {
   _max: ChangeAdvancedMaxAggregateOutputType | null
 }
 
-type GetChangeAdvancedGroupByPayload<T extends ChangeAdvancedGroupByArgs> = Prisma.PrismaPromise<
+export type GetChangeAdvancedGroupByPayload<T extends ChangeAdvancedGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ChangeAdvancedGroupByOutputType, T['by']> &
       {
@@ -1327,6 +1327,11 @@ export type ChangeAdvancedFindManyArgs<ExtArgs extends runtime.Types.Extensions.
    * Skip the first `n` ChangeAdvanceds.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ChangeAdvanceds.
+   */
   distinct?: Prisma.ChangeAdvancedScalarFieldEnum | Prisma.ChangeAdvancedScalarFieldEnum[]
 }
 

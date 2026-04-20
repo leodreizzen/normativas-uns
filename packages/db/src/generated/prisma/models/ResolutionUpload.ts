@@ -172,7 +172,7 @@ export type ResolutionUploadGroupByOutputType = {
   _max: ResolutionUploadMaxAggregateOutputType | null
 }
 
-type GetResolutionUploadGroupByPayload<T extends ResolutionUploadGroupByArgs> = Prisma.PrismaPromise<
+export type GetResolutionUploadGroupByPayload<T extends ResolutionUploadGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ResolutionUploadGroupByOutputType, T['by']> &
       {
@@ -1396,6 +1396,11 @@ export type ResolutionUploadFindManyArgs<ExtArgs extends runtime.Types.Extension
    * Skip the first `n` ResolutionUploads.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ResolutionUploads.
+   */
   distinct?: Prisma.ResolutionUploadScalarFieldEnum | Prisma.ResolutionUploadScalarFieldEnum[]
 }
 

@@ -144,7 +144,7 @@ export type ChangeApproveAnnexGroupByOutputType = {
   _max: ChangeApproveAnnexMaxAggregateOutputType | null
 }
 
-type GetChangeApproveAnnexGroupByPayload<T extends ChangeApproveAnnexGroupByArgs> = Prisma.PrismaPromise<
+export type GetChangeApproveAnnexGroupByPayload<T extends ChangeApproveAnnexGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ChangeApproveAnnexGroupByOutputType, T['by']> &
       {
@@ -1097,6 +1097,11 @@ export type ChangeApproveAnnexFindManyArgs<ExtArgs extends runtime.Types.Extensi
    * Skip the first `n` ChangeApproveAnnexes.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ChangeApproveAnnexes.
+   */
   distinct?: Prisma.ChangeApproveAnnexScalarFieldEnum | Prisma.ChangeApproveAnnexScalarFieldEnum[]
 }
 

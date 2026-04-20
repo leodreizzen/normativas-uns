@@ -207,7 +207,7 @@ export type ReferenceAnnexGroupByOutputType = {
   _max: ReferenceAnnexMaxAggregateOutputType | null
 }
 
-type GetReferenceAnnexGroupByPayload<T extends ReferenceAnnexGroupByArgs> = Prisma.PrismaPromise<
+export type GetReferenceAnnexGroupByPayload<T extends ReferenceAnnexGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ReferenceAnnexGroupByOutputType, T['by']> &
       {
@@ -2089,6 +2089,11 @@ export type ReferenceAnnexFindManyArgs<ExtArgs extends runtime.Types.Extensions.
    * Skip the first `n` ReferenceAnnexes.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ReferenceAnnexes.
+   */
   distinct?: Prisma.ReferenceAnnexScalarFieldEnum | Prisma.ReferenceAnnexScalarFieldEnum[]
 }
 

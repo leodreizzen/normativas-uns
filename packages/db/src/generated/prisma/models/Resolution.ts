@@ -258,7 +258,7 @@ export type ResolutionGroupByOutputType = {
   _max: ResolutionMaxAggregateOutputType | null
 }
 
-type GetResolutionGroupByPayload<T extends ResolutionGroupByArgs> = Prisma.PrismaPromise<
+export type GetResolutionGroupByPayload<T extends ResolutionGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ResolutionGroupByOutputType, T['by']> &
       {
@@ -3195,6 +3195,11 @@ export type ResolutionFindManyArgs<ExtArgs extends runtime.Types.Extensions.Inte
    * Skip the first `n` Resolutions.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Resolutions.
+   */
   distinct?: Prisma.ResolutionScalarFieldEnum | Prisma.ResolutionScalarFieldEnum[]
 }
 

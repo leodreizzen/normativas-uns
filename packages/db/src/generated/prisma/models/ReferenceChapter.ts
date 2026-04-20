@@ -218,7 +218,7 @@ export type ReferenceChapterGroupByOutputType = {
   _max: ReferenceChapterMaxAggregateOutputType | null
 }
 
-type GetReferenceChapterGroupByPayload<T extends ReferenceChapterGroupByArgs> = Prisma.PrismaPromise<
+export type GetReferenceChapterGroupByPayload<T extends ReferenceChapterGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ReferenceChapterGroupByOutputType, T['by']> &
       {
@@ -1451,6 +1451,11 @@ export type ReferenceChapterFindManyArgs<ExtArgs extends runtime.Types.Extension
    * Skip the first `n` ReferenceChapters.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ReferenceChapters.
+   */
   distinct?: Prisma.ReferenceChapterScalarFieldEnum | Prisma.ReferenceChapterScalarFieldEnum[]
 }
 

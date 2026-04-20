@@ -165,7 +165,7 @@ export type TextReferenceGroupByOutputType = {
   _max: TextReferenceMaxAggregateOutputType | null
 }
 
-type GetTextReferenceGroupByPayload<T extends TextReferenceGroupByArgs> = Prisma.PrismaPromise<
+export type GetTextReferenceGroupByPayload<T extends TextReferenceGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<TextReferenceGroupByOutputType, T['by']> &
       {
@@ -1259,6 +1259,11 @@ export type TextReferenceFindManyArgs<ExtArgs extends runtime.Types.Extensions.I
    * Skip the first `n` TextReferences.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of TextReferences.
+   */
   distinct?: Prisma.TextReferenceScalarFieldEnum | Prisma.TextReferenceScalarFieldEnum[]
 }
 

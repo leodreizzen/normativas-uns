@@ -137,7 +137,7 @@ export type V_ResolutionSearchGroupByOutputType = {
   _max: V_ResolutionSearchMaxAggregateOutputType | null
 }
 
-type GetV_ResolutionSearchGroupByPayload<T extends v_ResolutionSearchGroupByArgs> = Prisma.PrismaPromise<
+export type GetV_ResolutionSearchGroupByPayload<T extends v_ResolutionSearchGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<V_ResolutionSearchGroupByOutputType, T['by']> &
       {
@@ -739,6 +739,11 @@ export type v_ResolutionSearchFindManyArgs<ExtArgs extends runtime.Types.Extensi
    * Skip the first `n` v_ResolutionSearches.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of v_ResolutionSearches.
+   */
   distinct?: Prisma.V_ResolutionSearchScalarFieldEnum | Prisma.V_ResolutionSearchScalarFieldEnum[]
 }
 

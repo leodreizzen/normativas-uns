@@ -178,7 +178,7 @@ export type RecitalGroupByOutputType = {
   _max: RecitalMaxAggregateOutputType | null
 }
 
-type GetRecitalGroupByPayload<T extends RecitalGroupByArgs> = Prisma.PrismaPromise<
+export type GetRecitalGroupByPayload<T extends RecitalGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<RecitalGroupByOutputType, T['by']> &
       {
@@ -1216,6 +1216,11 @@ export type RecitalFindManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
    * Skip the first `n` Recitals.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of Recitals.
+   */
   distinct?: Prisma.RecitalScalarFieldEnum | Prisma.RecitalScalarFieldEnum[]
 }
 

@@ -144,7 +144,7 @@ export type AnnexWithArticlesGroupByOutputType = {
   _max: AnnexWithArticlesMaxAggregateOutputType | null
 }
 
-type GetAnnexWithArticlesGroupByPayload<T extends AnnexWithArticlesGroupByArgs> = Prisma.PrismaPromise<
+export type GetAnnexWithArticlesGroupByPayload<T extends AnnexWithArticlesGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<AnnexWithArticlesGroupByOutputType, T['by']> &
       {
@@ -1208,6 +1208,11 @@ export type AnnexWithArticlesFindManyArgs<ExtArgs extends runtime.Types.Extensio
    * Skip the first `n` AnnexWithArticles.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of AnnexWithArticles.
+   */
   distinct?: Prisma.AnnexWithArticlesScalarFieldEnum | Prisma.AnnexWithArticlesScalarFieldEnum[]
 }
 

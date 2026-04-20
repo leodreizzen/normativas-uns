@@ -268,7 +268,7 @@ export type V_ArticleContextGroupByOutputType = {
   _max: V_ArticleContextMaxAggregateOutputType | null
 }
 
-type GetV_ArticleContextGroupByPayload<T extends v_ArticleContextGroupByArgs> = Prisma.PrismaPromise<
+export type GetV_ArticleContextGroupByPayload<T extends v_ArticleContextGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<V_ArticleContextGroupByOutputType, T['by']> &
       {
@@ -1177,6 +1177,11 @@ export type v_ArticleContextFindManyArgs<ExtArgs extends runtime.Types.Extension
    * Skip the first `n` v_ArticleContexts.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of v_ArticleContexts.
+   */
   distinct?: Prisma.V_ArticleContextScalarFieldEnum | Prisma.V_ArticleContextScalarFieldEnum[]
 }
 

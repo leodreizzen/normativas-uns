@@ -130,7 +130,7 @@ export type ArticleModifierGroupByOutputType = {
   _max: ArticleModifierMaxAggregateOutputType | null
 }
 
-type GetArticleModifierGroupByPayload<T extends ArticleModifierGroupByArgs> = Prisma.PrismaPromise<
+export type GetArticleModifierGroupByPayload<T extends ArticleModifierGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ArticleModifierGroupByOutputType, T['by']> &
       {
@@ -1049,6 +1049,11 @@ export type ArticleModifierFindManyArgs<ExtArgs extends runtime.Types.Extensions
    * Skip the first `n` ArticleModifiers.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ArticleModifiers.
+   */
   distinct?: Prisma.ArticleModifierScalarFieldEnum | Prisma.ArticleModifierScalarFieldEnum[]
 }
 

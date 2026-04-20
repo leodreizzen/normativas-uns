@@ -137,7 +137,7 @@ export type ChangeModifyTextAnnexGroupByOutputType = {
   _max: ChangeModifyTextAnnexMaxAggregateOutputType | null
 }
 
-type GetChangeModifyTextAnnexGroupByPayload<T extends ChangeModifyTextAnnexGroupByArgs> = Prisma.PrismaPromise<
+export type GetChangeModifyTextAnnexGroupByPayload<T extends ChangeModifyTextAnnexGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ChangeModifyTextAnnexGroupByOutputType, T['by']> &
       {
@@ -1248,6 +1248,11 @@ export type ChangeModifyTextAnnexFindManyArgs<ExtArgs extends runtime.Types.Exte
    * Skip the first `n` ChangeModifyTextAnnexes.
    */
   skip?: number
+  /**
+   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+   * 
+   * Filter by unique combinations of ChangeModifyTextAnnexes.
+   */
   distinct?: Prisma.ChangeModifyTextAnnexScalarFieldEnum | Prisma.ChangeModifyTextAnnexScalarFieldEnum[]
 }
 
