@@ -16,7 +16,7 @@ export async function checkResourcePermission<R extends Resource>(resource: R, a
 
     const {success: hasPermission} = await auth.api.userHasPermission({
             body: {
-                permission: {
+                permissions: {
                     [resource]: [action]
                 },
                 userId: session.user.id
