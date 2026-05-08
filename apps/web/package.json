@@ -47,7 +47,7 @@
     "@tailwindcss/postcss": "^4.2.2",
     "@tanstack/react-query": "^5.99.0",
     "ai": "^6.0.159",
-    "axios": "^1.15.0",
+    "axios": "^1.15.2",
     "bcrypt": "^6.0.0",
     "better-auth": "^1.6.2",
     "bullmq": "^5.73.5",
