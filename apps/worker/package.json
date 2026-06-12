@@ -46,7 +46,7 @@
     "@repo/typescript-config": "workspace:*",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^22.19.17",
-    "esbuild": "0.25.10",
+    "esbuild": "0.28.1",
     "eslint": "^9.39.4",
     "globals": "^16.5.0",
     "nodemon": "^3.1.14",
