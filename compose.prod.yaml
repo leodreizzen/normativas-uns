@@ -119,6 +119,7 @@ services:
   garage:
     image: dxflrs/garage:v2.1.0
     container_name: normativas-garage
+    restart: unless-stopped
     volumes:
       - ./infra/garage/garage.toml:/etc/garage.toml
       - garage_meta:/var/lib/garage/meta
