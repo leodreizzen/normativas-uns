@@ -3,7 +3,7 @@ RUN apk update && apk add --no-cache openssl
 WORKDIR /app
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable pnpm
+RUN corepack enable pnpm && corepack prepare pnpm@9.0.0 --activate
 
 FROM base AS prepare
 RUN pnpm add -g turbo@^2.5.8

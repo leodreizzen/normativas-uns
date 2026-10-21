@@ -3,7 +3,7 @@ RUN apk add --no-cache python3 openssl
 WORKDIR /app
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable pnpm
+RUN corepack enable pnpm && corepack prepare pnpm@9.0.0 --activate
 
 
 FROM base AS prepare
