@@ -142,7 +142,7 @@ export async function cleanupUploads(){
     for (const upload of uploadsToCheck) {
         const job = await resolutionsQueue.getJob(upload.id);
         const jobStatus = await job?.getState();
-        if (!jobStatus || jobStatus in ["completed", "failed"]) {
+        if (!jobStatus || ["completed", "failed"].includes(jobStatus)) {
             console.log(`Marking upload ${upload.id} as FAILED due to inactivity`);
             await updateUploadStatus({uploadId: upload.id, status: "FAILED", errorMessage: "Error interno", ifStatus: ["PENDING", "PROCESSING"]});
         }
@@ -155,7 +155,7 @@ export async function cleanupMaintenanceTasks(){
     for (const task of tasksToCheck) {
         const job = await maintenanceQueue.getJob(task.id);
         const jobStatus = await job?.getState();
-        if (!jobStatus || jobStatus in ["completed", "failed"]) {
+        if (!jobStatus || ["completed", "failed"].includes(jobStatus)) {
             console.log(`Marking maintenance task ${task.id} as FAILED due to inactivity`);
             await updateMaintenanceTaskStatus({taskId: task.id, status: "FAILED", errorMessage: "Error interno", ifStatus: ["PENDING", "PROCESSING"]});
         }
