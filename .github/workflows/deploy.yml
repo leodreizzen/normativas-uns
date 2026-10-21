@@ -63,8 +63,8 @@ jobs:
         with:
           base: ${{ steps.base.outputs.REF }}
           filters: |
-            web: ['apps/web/**', 'packages/**']
-            worker: ['apps/worker/**', 'packages/**']
+            web: ['apps/web/**', 'packages/**', 'infra/wait-for/**']
+            worker: ['apps/worker/**', 'packages/**', 'infra/wait-for/**']
             migrator: ['packages/db/**', 'migrator.Dockerfile']
             infra: ['infra/**', 'compose.prod.yaml']
 
@@ -180,6 +180,15 @@ jobs:
             docker compose -f compose.prod.yaml up -d --build --remove-orphans --wait --force-recreate
             
             docker image prune -f
+
+            # Start the stack on boot and stop it cleanly on shutdown
+            SUDO=$([ "$(id -u)" -eq 0 ] || echo sudo)
+            sed -e "s|@DIR@|$(pwd)|" -e "s|@DOCKER@|$(command -v docker)|" infra/systemd/normativas.service \
+              | $SUDO tee /etc/systemd/system/normativas.service > /dev/null
+            $SUDO systemctl daemon-reload
+            $SUDO systemctl enable normativas.service
+            # Marks the unit active (no-op if it already is) so ExecStop runs on shutdown
+            $SUDO systemctl start normativas.service
       - name: Verify Deployment
         uses: jtalk/url-health-check-action@v4
         with:

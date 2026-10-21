@@ -1,0 +1,20 @@
+# Installed by the deploy workflow; @DIR@ and @DOCKER@ are filled in there.
+# Graceful shutdown: ExecStop stops the stack, so Docker won't auto-restart it
+# on boot and this unit brings it back up honoring depends_on.
+[Unit]
+Description=Normativas UNS (docker compose)
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=@DIR@
+ExecStart=@DOCKER@ compose -f compose.prod.yaml up -d --remove-orphans --wait
+ExecStop=@DOCKER@ compose -f compose.prod.yaml stop
+TimeoutStartSec=600
+TimeoutStopSec=120
+
+[Install]
+WantedBy=multi-user.target

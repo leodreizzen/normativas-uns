@@ -62,5 +62,7 @@ COPY --from=builder --chown=worker:nodejs /app/apps/worker/src/parser/pdfparse.p
 
 COPY --from=builder --chown=worker:nodejs /app/apps/worker/build .
 COPY --from=builder --chown=worker:nodejs /app/apps/worker/.venv ./.venv
+COPY infra/wait-for/ /usr/local/lib/wait-for/
+ENTRYPOINT ["/bin/sh", "/usr/local/lib/wait-for/entrypoint.sh"]
 
 CMD ["node", "worker.js"]
